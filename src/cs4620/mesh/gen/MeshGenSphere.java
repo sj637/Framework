@@ -1,0 +1,26 @@
+package cs4620.mesh.gen;
+
+import cs4620.mesh.MeshData;
+import egl.NativeMem;
+
+/**
+ * Generates A Sphere Mesh
+ * @author Cristian
+ *
+ */
+public class MeshGenSphere extends MeshGenerator {
+	@Override
+	public void generate(MeshData outData, MeshGenOptions opt) {
+		// TODO#A1 SOLUTION START
+
+		// Calculate Vertex And Index Count
+
+		// Create Storage Spaces
+		
+		// Create The Vertices
+		
+		// Create The Indices
+				
+		// #SOLUTION END
+	}
+}
