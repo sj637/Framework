@@ -24,7 +24,26 @@ public class OrthographicCamera extends Camera {
         // TODO#A2: Fill in this function.
         // 1) Set basisU, basisV, basisW to be the 3 basis vectors, 
         //    based on viewDir and viewUp
-      
+
+    	// viewDir fixed = basisW 	
+    	basisW.x = -viewDir.x;
+    	basisW.y = -viewDir.y;
+        basisW.z = -viewDir.z;
+    
+    	// Cross Multi viewDir and viewUp = basisU
+    	double basisUx = viewUp.z*viewDir.y - viewUp.y*viewDir.z;
+    	double basisUy = viewUp.x*viewDir.z - viewUp.z*viewDir.x;
+    	double basisUz = viewUp.y*viewDir.x - viewUp.x*viewDir.y;
+    	basisU.set(basisUx,basisUy,basisUz);
+    	basisU.normalize();
+    	
+    	// Cross Multi basisW and basisU = basisV
+    	double basisVx = basisW.y*basisU.z-basisW.z*basisU.y;
+    	double basisVy = basisW.z*basisU.x-basisW.x*basisU.z;
+    	double basisVz = basisW.x*basisU.y-basisW.y*basisU.x;
+    	basisV.set(basisVx,basisVy,basisVz);
+    	basisV.normalize();
+    	
         initialized = true;
     }
 
